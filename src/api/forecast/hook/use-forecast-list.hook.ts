@@ -1,9 +1,9 @@
-import {useEffect, useRef} from 'react';
 import {useDispatch} from 'react-redux';
+import {useEffect} from 'react';
 
-import {foreacastListLoadAction} from 'api/forecast/state/action/forecast.action';
 import {ForecastItemInterface} from 'api/forecast/interface/forecast.interface';
-import {useForecastSelector} from 'api/forecast/selector/forecast-list.selector';
+import {useForecastListSelector} from 'api/forecast/selector/forecast-list.selector';
+import {foreacastListLoadAction} from 'api/forecast/state/action/forecast.action';
 
 export const useForecastList = (): [
   ForecastItemInterface[],
@@ -11,18 +11,9 @@ export const useForecastList = (): [
   string,
 ] => {
   const dispatch = useDispatch();
-  const forecastList = useForecastSelector();
-  const timeout = useRef(0);
-  const inTimeout = useRef(false);
+  const forecastList = useForecastListSelector();
 
-  useEffect(() => {
-    !inTimeout.current && dispatch(foreacastListLoadAction());
-
-    inTimeout.current = true;
-    timeout.current = setTimeout(() => (inTimeout.current = false));
-
-    return () => clearTimeout(timeout.current);
-  }, []);
+  useEffect(() => void dispatch(foreacastListLoadAction()), []);
 
   return forecastList;
 };

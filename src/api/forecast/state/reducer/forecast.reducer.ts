@@ -4,12 +4,14 @@ import {
   foreacastItemLoadAction,
   forecastItemLoadSuccessAction,
   forecastItemLoadFailedAction,
+  forecastItemClearAction,
   foreacastListLoadAction,
   forecastListLoadSuccessAction,
   forecastListLoadFailedAction,
 } from 'api/forecast/state/action/forecast.action';
 import {forecastInitialState} from 'api/forecast/state/initial-state/forecast.initial-state';
 import {ForecastRootState} from 'api/forecast/interface/forecast.interface';
+import { emplyForecastItem } from '../empty-data/empty-forecast';
 
 export const forecastReducer = reducer<ForecastRootState>(
   forecastInitialState,
@@ -33,6 +35,14 @@ export const forecastReducer = reducer<ForecastRootState>(
     item: {
       ...state.item,
       error,
+      isLoading: false,
+    },
+  })),
+  on(forecastItemClearAction, (state) => ({
+    ...state,
+    item: {
+      ...state.item,
+      data: emplyForecastItem,
       isLoading: false,
     },
   })),

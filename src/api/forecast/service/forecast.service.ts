@@ -7,8 +7,9 @@ import {
 import {fetchForecast} from 'api/forecast/util/forecast-fetch.util';
 import {citiesIds} from 'api/forecast/const';
 
-export const getForecastItem$ = (id: string): Observable<ForecastItemInterface> => 
-  fetchForecast(`weather?id=${id}`);
+export const getForecastItem$ = (
+  cityName: string,
+): Observable<ForecastItemInterface> => fetchForecast(`weather?q=${cityName}`);
 
 export const getForecastList$ = (): Observable<ForecastListResponse> =>
-  fetchForecast(`group?id={${citiesIds}}`);
+  fetchForecast(`groupd?id={${citiesIds}}`);

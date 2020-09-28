@@ -9,7 +9,7 @@ export const forecastInitialState: ForecastRootState = {
   },
   list: {
     isLoading: false,
-    data: [],
+    data: [emplyForecastItem],
     error: '',
   },
 };

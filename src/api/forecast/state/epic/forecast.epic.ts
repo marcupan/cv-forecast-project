@@ -1,12 +1,12 @@
-import {combineEpics} from 'redux-observable';
-import {Observable} from 'rxjs';
-import {catchError, map, switchMap} from 'rxjs/operators';
-import {Action} from 'ts-action';
-import {ofType, toPayload} from 'ts-action-operators';
+import { combineEpics } from 'redux-observable';
+import { Observable } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { Action } from 'ts-action';
+import { ofType, toPayload } from 'ts-action-operators';
 
 import {
   getForecastItem$,
-  getForecastList$,
+  getForecastList$
 } from 'api/forecast/service/forecast.service';
 import {
   foreacastItemLoadAction,
@@ -14,7 +14,7 @@ import {
   forecastItemLoadFailedAction,
   forecastItemLoadSuccessAction,
   forecastListLoadFailedAction,
-  forecastListLoadSuccessAction,
+  forecastListLoadSuccessAction
 } from 'api/forecast/state/action/forecast.action';
 
 const forecastItemLoadEpic = (action$: Observable<Action>) =>

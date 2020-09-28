@@ -17,6 +17,7 @@ export const forecastItemLoadFailedAction = action(
   'FORECAST_CITY_ITEM_FAILED',
   payload<string>(),
 );
+export const forecastItemClearAction = action('FORECAST_CITY_ITEM_CLEAR');
 
 export const foreacastListLoadAction = action('FORECAST_CITY_LIST');
 export const forecastListLoadSuccessAction = action(
