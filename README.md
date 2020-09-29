@@ -5,7 +5,7 @@ Example project with the usage of technologies in which I have working experienc
 ## Forecast screen
 | Forecast Front  | Forecast Back                                 | Forecast Flip                                  |
 | --------------- | --------------------------------------------- | ---------------------------------------------- |
-| ![]([front])    | ![][front]                                    | ![](__screenshots__/screen-forecast-flip.png)  |
+| ![](front)    | ![][front]                                    | ![](__screenshots__/screen-forecast-flip.png)  |
 
 ## Search screen
 | Search Result                                | Search Empty                                  |
