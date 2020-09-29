@@ -24,6 +24,7 @@ export const ForecastItem = ({item, onPress = emptyFn}: Props) => {
       ForecastItemStyles.wrapper,
       {
         shadowOpacity: pressed ? 0.05 : 0.25,
+        elevation: pressed ? 1 : 5,
       },
     ],
     [],

@@ -1,3 +1,5 @@
+import { StyleProp, ViewStyle } from 'react-native';
+
 import {EmptyFn, RenderFn} from 'components/shared/type/event.type';
 
 export interface CardSideProps {
@@ -5,6 +7,7 @@ export interface CardSideProps {
 }
 
 export interface CardProps {
+  style?: StyleProp<ViewStyle>;
   renderFront: RenderFn<CardSideProps>;
   renderBack: RenderFn<CardSideProps>;
 }

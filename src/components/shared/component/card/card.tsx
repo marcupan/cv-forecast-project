@@ -6,7 +6,7 @@ import {CardProps} from 'components/shared/interface/card.interface';
 
 import {CardStyles} from './card.styles';
 
-const CardComponent = ({renderFront, renderBack}: CardProps) => {
+const CardComponent = ({style, renderFront, renderBack}: CardProps) => {
   const [isFront, setIsFront] = useState(true);
 
   const opacity = useRef(new Animated.Value(0)).current;
@@ -37,6 +37,7 @@ const CardComponent = ({renderFront, renderBack}: CardProps) => {
       perspective: animationPerspective,
     },
   ];
+  const rootStyle = [CardStyles.root, style];
 
   const handleFlip = () => {
     Animated.timing(opacity, {
@@ -49,7 +50,7 @@ const CardComponent = ({renderFront, renderBack}: CardProps) => {
   };
 
   return (
-    <Animated.View style={CardStyles.root}>
+    <Animated.View style={rootStyle}>
       <Animated.View style={backSideStyles}>
         {renderBack({onFlip: handleFlip})}
       </Animated.View>

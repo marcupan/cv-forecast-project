@@ -7,6 +7,7 @@ export const fetchForecast = (params: string) =>
     selector: (response) => response.json(),
   }).pipe(
     tap((res) => {
+      console.log(`${Config.API_URL}${params}&appid=${Config.API_KEY}&units=metric`);
       if (res.message) {
         throw new Error(res.message);
       }

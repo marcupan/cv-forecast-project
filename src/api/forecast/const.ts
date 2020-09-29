@@ -101,6 +101,7 @@ export const shadowStyles = {
   },
   shadowOpacity: 0.25,
   shadowRadius: 5,
+  elevation: 5,
 };
 
 export const listItemPadding = 10;

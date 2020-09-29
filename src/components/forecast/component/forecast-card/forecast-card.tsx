@@ -44,5 +44,11 @@ export const ForecastCard = ({forecast}: Props) => {
     </CardSide>
   );
 
-  return <Card renderFront={renderFront} renderBack={renderBack} />;
+  return (
+    <Card
+      style={{marginBottom: 20}}
+      renderFront={renderFront}
+      renderBack={renderBack}
+    />
+  );
 };
