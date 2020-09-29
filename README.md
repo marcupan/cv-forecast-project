@@ -1,4 +1,4 @@
-# Forecast app (IOS) for CV
+# Forecast app for CV
 
 Example project with the usage of technologies in which I have working experience.
 
@@ -10,5 +10,5 @@ Example project with the usage of technologies in which I have working experienc
 | ![](__screenshots__/screen-search-empty.png)   | ![](__screenshots__/screen-search-result.png) |
 
 ``` 
-    yarn ios 
+    yarn ios || yarn android
 ```
